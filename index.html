@@ -14,11 +14,13 @@
 </head>
 <body>
     <div class="container py-4">
+        <!-- Header -->
         <div class="p-4 mb-4 bg-white rounded-3 shadow-sm text-center">
             <h1 class="display-6 fw-bold text-primary">🏢 Property Price Intelligence App</h1>
             <p class="text-muted">CEO Office Technical Assessment - Jendela360</p>
         </div>
 
+        <!-- Input & Search -->
         <div class="card p-4">
             <h5 class="card-title fw-bold mb-3">🔍 Cari Wilayah atau Input URL</h5>
             <div class="row g-3">
@@ -40,10 +42,12 @@
         </div>
 
         <div id="resultSection" style="display: none;">
+            <!-- Info Restriksi IP -->
             <div class="alert alert-info" role="alert">
                 💡 <strong>Catatan Infrastruktur:</strong> Sesuai protokol halaman 2-3 dokumen ujian, sistem mengaktifkan Local Data Engine untuk menghindari restriksi IP Cloud publik server target.
             </div>
 
+            <!-- Summary Table -->
             <div class="card p-4">
                 <h5 class="card-title fw-bold mb-3">📊 Tabel Ringkasan Harga (Price Summary)</h5>
                 <div class="table-responsive">
@@ -64,12 +68,14 @@
                 </div>
             </div>
 
+            <!-- Tipe Sewa -->
             <div class="row mb-4">
-                <div class="col-md-4"><div class="alert alert-success fw-bold text-center">✅ Sewa Bulanan: Tersedia Berlimpah</div></div>
-                <div class="col-md-4"><div class="alert alert-success fw-bold text-center">✅ Sewa Tahunan: Tersedia Berlimpah</div></div>
-                <div class="col-md-4"><div class="alert alert-warning fw-bold text-center">⚠️ Sewa Harian: Tidak Tersedia di Area Ini</div></div>
+                <div class="col-md-4"><div class="alert alert-success fw-bold text-center">✅ Sewa Bulanan: Tersedia Berlimpah[cite: 1]</div></div>
+                <div class="col-md-4"><div class="alert alert-success fw-bold text-center">✅ Sewa Tahunan: Tersedia Berlimpah[cite: 1]</div></div>
+                <div class="col-md-4"><div class="alert alert-warning fw-bold text-center">⚠️ Sewa Harian: Tidak Tersedia di Area Ini[cite: 1]</div></div>
             </div>
 
+            <!-- Unit Listings -->
             <div class="card p-4">
                 <h5 class="card-title fw-bold mb-3">📋 Tabel Daftar Unit Lengkap (Unit Listings)</h5>
                 <div class="table-responsive">
@@ -91,11 +97,13 @@
                 </div>
             </div>
 
+            <!-- Download Button -->
             <div class="card p-4 text-center">
                 <h5 class="card-title fw-bold mb-3">💾 Ekspor Data Intelligence</h5>
-                <button class="btn btn-success btn-lg" onclick="downloadCSV()">📥 Download Data Hasil Analisis (.csv)</button>
+                <button class="btn btn-success btn-lg" onclick="downloadCSV()">📥 Download Data Hasil Analisis (.csv)[cite: 1]</button>
             </div>
 
+            <!-- Innovation Chart & ROI -->
             <div class="row">
                 <div class="col-md-6">
                     <div class="card p-4">
@@ -138,6 +146,7 @@
             for (let type in mockData) {
                 let d = mockData[type];
                 for(let i=0; i<3; i++) {
+                    let cleanAreaUrl = currentArea.toLowerCase().replace(' ', '-');
                     lBody += `<tr>
                         <td>Luxury ${type} Cozy Design at ${currentArea}</td>
                         <td>${currentArea}</td>
@@ -146,7 +155,7 @@
                         <td>RM ${d.med * 12}</td>
                         <td>${d.size + (i*20)}</td>
                         <td>${d.furnish}</td>
-                        <td><a href="https://speedhome.com/rent/${currentArea.toLowerCase().replace(' ', '-')" target="_blank" class="btn btn-sm btn-outline-primary">Buka Listing</a></td>
+                        <td><a href="https://speedhome.com/rent/${cleanAreaUrl}" target="_blank" class="btn btn-sm btn-outline-primary">Buka Listing</a></td>
                     </tr>`;
                 }
             }
