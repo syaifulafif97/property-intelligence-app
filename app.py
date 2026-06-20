@@ -87,7 +87,7 @@ st.caption("CEO Office Technical Assessment - Jendela360")
 st.markdown("---")
 
 # --- 1. KOLOM INPUT & AUTO-SUGGEST ---
-st.subheader("🔍 Cari Wilayah atau Input URL")
+st.subheader("🔍 Cari Wilayah or Input URL")
 available_areas = ["Mont Kiara", "Mont Kiara Aman", "Mont Kiara Bayu", "KLCC", "Bangsar", "Petaling Jaya", "Subang Jaya", "Cheras"]
 
 search_option = st.selectbox(
